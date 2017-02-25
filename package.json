@@ -8,36 +8,33 @@
   },
   "author": "krishna",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "angular": "latest",
     "angular-route": "latest",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-1": "^6.16.0",
     "babelify": "latest",
-    "backbone": "latest",
     "bootstrap": "latest",
     "browser-sync": "^2.18.1",
     "browserify": "latest",
-    "canvasjs": "latest",
+    "canvasjs": "^1.8.1",
     "del": "latest",
     "gulp": "^3.9.1",
-    "gulp-babel": "latest",
+    "gulp-babel": "^6.1.2",
     "gulp-browserify": "latest",
     "gulp-concat-css": "^2.3.0",
-    "gulp-jshint": "latest",
-    "gulp-logger": "0.0.2",
     "gulp-minify": "latest",
-    "gulp-sass": "latest",
-    "gulp-sourcemaps": "latest",
+    "gulp-series": "latest",
     "gulp-watch": "^4.3.10",
     "jquery": "latest",
     "require-globify": "latest",
-    "underscore": "latest",
-    "vinyl-source-stream": "latest"
+    "vinyl-source-stream": "^1.1.0"
   },
-  "devDependencies": {
-    "gulp-color": "0.0.1",
-    "progress-stream": "^1.2.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krish0652/tp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krish0652/tp/issues"
+  },
+  "homepage": "https://github.com/krish0652/tp#readme"
 }
