@@ -3,9 +3,11 @@ var gulp = require('gulp'),
    gulpWatch = require('gulp-watch');
    
 module.exports = {
-	copy:function(){
+	copy:function(callback){
+		utils.showIndicator("[" + config.projectName + "] HTML template copy started ");
   		gulp.src(config.src.html).pipe(gulp.dest(config.dest.template)).on('end',function(){
-      	console.log("Completed copying template files");
+  			utils.stopIndicator();
+  			callback();
       });
 	},
 	watch:function(browserSync){
@@ -14,9 +16,9 @@ module.exports = {
 		gulpWatch(config.watch.html, config.watch.options).on(config.watch.event,function(event){
 			self.copy();
 			browserSync.reload();   
-      	console.log("Completed copying template files");    
+      	console.log("[" + config.projectName + "] Completed copying template files");    
 		});
 		gulpWatch('./index.html', { ignoreInitial: false }).on(config.watch.event, browserSync.reload);	
-		console.log("Watching Templates & index.html files ");	
+		console.log("[" + config.projectName + "] Watching Templates & index.html files ");	
 	}
 }

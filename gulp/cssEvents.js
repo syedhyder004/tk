@@ -1,14 +1,17 @@
 var gulp = require('gulp'),
    concatCss = require('gulp-concat-css'),
    config = require("./config"),
-   gulpWatch = require('gulp-watch');
+   gulpWatch = require('gulp-watch'),
+   utils = require('./utils');
 
 module.exports = {
-	copy:function(){
+	copy:function(callback){
+		utils.showIndicator("[" + config.projectName + "] CSS minification started ");
    	gulp.src(config.src.css)
         .pipe(concatCss(config.fileNames.css))
         .pipe(gulp.dest(config.dest.css)).on('end',function(){
-      		console.log("Completed minifying css files");
+      		utils.stopIndicator();
+      		callback()
       	});
 	},
 	watch:function(browserSync){
@@ -16,8 +19,8 @@ module.exports = {
 		// watching all the css files.
 		gulpWatch(config.watch.css,config.watch.options).on(config.watch.event,function(event){ 
 			self.copy().on('end',browserSync.reload);
-      	console.log("Completed minifying css files");
+      	console.log("[" + config.projectName + "] Completed minifying css files");
 		});
-		console.log("Watching CSS files ");
+		console.log("[" + config.projectName + "] Watching CSS files ");
 	}
 }

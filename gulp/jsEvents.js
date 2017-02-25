@@ -4,10 +4,12 @@ var gulp = require('gulp'),
    source = require('vinyl-source-stream'),
    gulpWatch = require('gulp-watch'),
 	babel = require('gulp-babel'),
-	minify = require('gulp-minify');
+	minify = require('gulp-minify')
+	utils = require('./utils');
 
 module.exports = {
-	copy:function(){
+	copy:function(callback){
+	utils.showIndicator("[" + config.projectName + "] JS minification started ");
 	return browserify({
 		entries:'./app/js/init.js',
 		transform: ['require-globify']
@@ -26,16 +28,17 @@ module.exports = {
 	     		}	
 	  		}))
       	.pipe(gulp.dest(config.destination));
-      	console.log("Completed minifying JS files");
+      	utils.stopIndicator();
+      	callback();
 		});
 	},
 	watch:function(browserSync){
 		var self = this;
 		// watching all the js files.
 		gulpWatch(config.watch.js, config.watch.options).on(config.watch.event,function(event){
-		   self.copy().on('end',browserSync.reload);
-      	console.log("Completed minifying JS files");       
+			console.log("File "+ event +" was modified");
+		   self.copy(browserSync.reload);     
 		});
-		console.log("Watching JS files ");
+		console.log("[" + config.projectName + "] Watching JS files ");
 	}
 }
