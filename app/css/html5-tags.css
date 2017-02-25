@@ -1,0 +1,29 @@
+body { 
+	color: black;
+}
+a { 
+	color: #006899; 
+	cursor:pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+	background:none; 
+	border:0;
+	border-radius:0;
+	border-bottom:1px solid lightgray;
+	box-shadow:none;
+	transition:none;
+	padding:0;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+	outline: none;
+	box-shadow: none;
+	border-color: transparent;
+	border-bottom:1px solid lightgray;
+}
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+}
