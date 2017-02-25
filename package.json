@@ -32,6 +32,7 @@
     "gulp-jshint": "latest",
     "gulp-babel":"latest",
     "angular":"latest",
-    "angular-route":"latest"
+    "angular-route":"latest",
+    "gulp-sourcemaps":"latest"
   }
 }
