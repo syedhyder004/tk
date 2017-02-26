@@ -14,11 +14,15 @@ module.exports = {
 		var self = this;
 		// watching all the template files as well as the main index file.
 		gulpWatch(config.watch.html, config.watch.options).on(config.watch.event,function(event){
+			console.log("File "+ event +" was modified");
 			self.copy();
 			browserSync.reload();   
       	console.log("[" + config.projectName + "] Completed copying template files");    
 		});
-		gulpWatch('./index.html', { ignoreInitial: false }).on(config.watch.event, browserSync.reload);	
+		gulpWatch('./index.html', { ignoreInitial: false }).on(config.watch.event, function(){
+			console.log("Root File "+ event +" was modified");
+		   browserSync.reload();
+		});	
 		console.log("[" + config.projectName + "] Watching Templates & index.html files ");	
 	}
 }
