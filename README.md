@@ -6,7 +6,7 @@ TP stands for Tax Partner is a web and mobile application for the auditors, ca, 
 
 TP uses a number of open source projects to work properly:
 
-* [Backbone.js] - HTML enhanced for web apps!
+* [Angular.js] - HTML enhanced for web apps!
 * [Sublime Editor] - awesome web-based text editor
 * [markdown-it] - Markdown parser done right. Fast and easy to extend.
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
@@ -30,29 +30,29 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 $ cd tp
 $ npm install 
-$ gulp --dev
+$ gulp --silent --dev
 ```
 
 For production environments...
 
 ```sh
 $ npm install 
-$ gulp --prod
+$ gulp --silent --prod
 ```
 
 ### Development
 
 Want to contribute? Great!
-TP uses Gulp + Webpack for fast developing. Make a change in your file and instantanously see your updates! Open your favorite Terminal and run these commands.
+TP uses Gulp for fast developing. Make a change in your file and instantanously see your updates! Open your favorite Terminal and run these commands.
 
 First Tab:
 ```sh
-$ node app
+$ node install --save-dev
 ```
 
 Second Tab:
 ```sh
-$ gulp 
+$ gulp --silent
 ```
 
 ### Todos
@@ -60,7 +60,7 @@ $ gulp
  - Write Tests
  - Rethink Github Save
  - Add Code Comments
- - Add Night Mode
+ - Adding source maps for development.
  - Gulp add env flags
 
 License
