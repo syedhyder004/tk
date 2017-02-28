@@ -10,16 +10,16 @@ module.exports = {
 	},
 	src: {
 		js:"",
-		css:"",
-		html:"./app/js/modules/views/*.html"
+		css:"./app/css/**/*.css",
+		html:"./app/js/modules/**/*.html"
 	},
 	clean: [
       'dist/index.js',
       'dist/index-min.js',
    ],
 	dest: {
-		js: "",
-		css: "",
+		js: "dist",
+		css: "dist/css",
 		template: "dist/views/",
 	},
 	fileNames: {

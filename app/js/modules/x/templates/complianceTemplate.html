@@ -1,0 +1,96 @@
+<div class="container">
+	<h3 class="pull-left">
+		Compliances
+	</h3>
+	<div class="pull-right">
+		<button class="btn btn-primary add-button" id="add_compliance">Add Compliance</button>
+	</div>
+	<hr class="clearfix"/> 
+	
+	<div style="height:20px"></div>
+	<div id="view_compliance">
+		<div class=" col-xs-12 col-sm-3">
+			<div class="panel panel-default">
+				<div class="panel-heading"> Service Tax</div>
+				<div class="panel-body" data-toggle="tooltip" data-animation="true" data-placement="bottom" title="click to edit">
+					<div>Yearly on 2nd dec</div>
+				</div>
+				<hr/>
+				<div class="panel-body" data-toggle="tooltip" data-animation="true" data-placement="bottom" title="click to edit">
+					<div>Quarterly on 05 for every 3 months</div>
+				</div>
+				<hr/>
+				<div class="panel-body" data-toggle="tooltip" data-animation="true" data-placement="bottom" title="click to edit">
+					<div >Monthly on 3rd of every month</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<form class="hidden" id="add_compliance_form">
+		<div class="col-sm-5">
+			<div class="">
+				<div class="form-group">
+					<label for="login_userid">Start Date</label>
+					<input type="date" required class="form-control" id="login_userid" placeholder="User Id">
+				</div>
+			</div>
+			<div class="">
+				<div class="form-group">
+					<label for="login_userid">End Date</label>
+					<input type="date" required class="form-control" id="login_userid" placeholder="User Id">
+				</div>
+			</div>
+			<div class="">
+				<div class="form-group">
+					<label for="login_userid">Type</label>
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    Dropdown
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li><a href="#">Something else here</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Separated link</a></li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+			<div class="">
+				<div class="form-group">
+					<label for="login_userid">Number</label>
+					<input type="text" style="text-transform:uppercase" required class="form-control" id="login_userid" placeholder="TAX NUMBER">
+				</div>
+			</div>
+			<div class="">
+				<div class="form-group">
+					<label for="login_userid">Upload Documents</label>
+				    <input type="file" required id="login_userid">
+				</div>
+			</div>
+		</div>
+		<div class="hidden-xs col-xs-offset-2 col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;Help
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li> You can specify any tax number which doesn't exists, system will automatically add it to your list</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="col-xs-3 col-sm-1">
+				<button class="btn btn-primary add-button">Submit</button>
+			</div>
+			<div class="col-xs-3 col-sm-1">
+				<button class="btn btn-default add-button" id="add_compliance_cancel">Cancel</button>
+			</div>
+		</div>
+	</form>	
+</div>

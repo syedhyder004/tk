@@ -4,11 +4,27 @@ window["angular-route"] = require("angular-route");
 require("bootstrap");
 window.CanvasJS = require('canvasjs');
 
-
-window.hackApp = angular.module("hackApp", ["ngRoute"]);
+// constants file
 window.appStrings = require("./modules/common/appStrings");
-window.httpRequests = require("./modules/common/http-request");
-window.utils = require("./modules/common/utils");
+window.utils = require('./modules/common/utils');
+// root file
+require('./modules/tp');
 
-var controllers = require("./modules/controllers/*", {mode: 'hash', resolve: ['path-reduce', 'strip-ext']});
-var router = require("./modules/routes/router");
+
+// common contorller for all the routes where the user checking will be carried out
+require('./modules/app/app')
+require('./modules/app/controllers/mainController');
+require('./modules/app/services/LoginService');
+require('./modules/app/services/LoadingService');
+
+// header related files
+require('./modules/header/header');
+require('./modules/header/controller/headerController');
+
+// login related files
+require('./modules/login/login');
+require('./modules/login/controller/loginController');
+
+// dashboard related files
+require('./modules/dashboard/dashboard');
+require('./modules/dashboard/controller/dashboardController');

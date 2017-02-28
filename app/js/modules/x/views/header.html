@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top" role="navigation" id="slide-nav">
+		<div class="container">
+			<div id="navbar-height-col"></div>
+			<div class="navbar-header">
+				<a class="navbar-toggle" ng-click="slideClick()"> 
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<div class="navbar-brand" >Tax Partner</div>
+			</div>
+			<div id="slidemenu">
+				<div class="clearfix visible-xs white menu-user">
+					<div class="col-xs-6">
+						<i class="fa fa-user fa-5x"></i>
+					</div>
+					<div class="col-xs-6">
+						<div>User Name</div>
+						<div>Phone Number</div>
+					</div>
+				</div>
+				<hr class="visible-xs">
+				<ul class="nav navbar-nav">
+					<li class=""><a >Dashboard</a></li>
+					<li class="dropdown"> <a  class="dropdown-toggle" data-toggle="dropdown">Tax Info <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="route" data-route="compliance"><a>Compliance</a></li>
+							<li class="divider"></li>
+							<li class="route" data-route="litigation"><a>Litigations</a></li>
+							<li class="divider"></li>
+							<li><a >Notices</a></li>
+							<li class="divider"></li>
+							<li><a >Numbers</a></li>
+							<li class="divider"></li>
+							<li><a>Contacts</a></li>
+						</ul>
+					</li>
+					<li class="route" data-route="report"><a>Reports</a></li>
+					<li><a ng-click="go('/home')">Records</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="route" data-route="report"><a>My Profile</a></li>
+					<li class="dropdown"> <a  class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+						<div mySnippet></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /.container-fluid -->
+</nav>
+
+<div class="{{showSpinner ? 'load-bar': 'load-bar hidden'}}">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>

@@ -14,10 +14,11 @@ module.exports = {
 		return browserify({
 			entries:'./app/js/init.js',
 			transform: ['require-globify']
-		}).bundle().on('error', function(){
-      	utils.stopIndicator();
-      	console.error(color("[ERROR] JS PARSE ERROR PLEASE CHECK ALL THE FILES",'RED'));
-      	callback();	
+		}).bundle().on('error', function(error){
+	      	console.log(error);
+	      	utils.stopIndicator();
+	      	console.error(color("[ERROR] JS PARSE ERROR PLEASE CHECK ALL THE FILES",'RED'));
+	      	callback();	
 		})
 		    //Pass desired output filename to vinyl-source-stream
 	   .pipe(source(config.fileNames.js))

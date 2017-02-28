@@ -15,11 +15,10 @@ module.exports = {
 		// watching all the template files as well as the main index file.
 		gulpWatch(config.watch.html, config.watch.options).on(config.watch.event,function(event){
 			console.log("File "+ event +" was modified");
-			self.copy();
-			browserSync.reload();   
+			self.copy(browserSync.reload);   
       	console.log("[" + config.projectName + "] Completed copying template files");    
 		});
-		gulpWatch('./index.html', { ignoreInitial: false }).on(config.watch.event, function(){
+		gulpWatch('./index.html', { ignoreInitial: false }).on(config.watch.event, function(event){
 			console.log("Root File "+ event +" was modified");
 		   browserSync.reload();
 		});	
