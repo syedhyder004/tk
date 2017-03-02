@@ -1,7 +1,9 @@
 
-angular.module('tp.Header',['tp.Common']).controller('HeaderBLCtrl', function($scope){
+angular.module('tp.Header',['tp.Common']).controller('HeaderBLCtrl', function($scope,NavigationService){
 
-	$scope.template = { url: '/dist/views/header/template/header.html' };
+	$scope.template = { url: '/dist/views/header.html' };
+	$scope.navigation = NavigationService.calculate();
+	console.log($scope.navigation);
 	$scope.go = function ( path ) {
 		$location.path( path );
 	};

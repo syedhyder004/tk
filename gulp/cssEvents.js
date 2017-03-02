@@ -17,9 +17,9 @@ module.exports = {
 	watch:function(browserSync){
 		var self = this;
 		// watching all the css files.
-		gulpWatch(config.watch.css,config.watch.options).on(config.watch.event,function(event){ 
+		gulpWatch(config.watch.css,config.watch.options).on(config.watch.event,function(event){
 			console.log("File "+ event +" was modified");
-		   self.copy().on('end',browserSync.reload);
+		   self.copy(browserSync.reload);
       	console.log("[" + config.projectName + "] Completed minifying css files");
 		});
 		console.log("[" + config.projectName + "] Watching CSS files ");

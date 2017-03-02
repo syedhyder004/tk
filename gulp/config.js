@@ -3,7 +3,7 @@ module.exports = {
 	projectName: "Project TP",
 	watch: {
 		js: "**/*.js",
-		css: "./app/css/*.css",
+		css: "css/*.css",
 		html: "**/*.html",
 		options: { cwd:"app",ignoreInitial: false },
 		event: "change"

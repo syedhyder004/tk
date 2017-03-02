@@ -13,18 +13,18 @@ var myModule = angular.module('tp',
         'angular-jwt',
         'angular-storage'*/
     ]);
-
+myModule.filter('ashtml', function($sce) { return $sce.trustAsHtml; });
 myModule.config(function($routeProvider, $httpProvider, $provide/*,
   authProvider, CURRENT_BACKEND, jwtInterceptorProvider*/) {
 
     $routeProvider
         .when('/', {
-            templateUrl : "/dist/views/login/template/loginTemplate.html",
+            templateUrl : "dist/views/loginTemplate.html",
             controller: "loginController",
             requiresLogin: true
         })
         .when('/dashboard', {
-            templateUrl : "/dist/views/dashboard/template/dashboardTemplate.html",
+            templateUrl : "dist/views/dashboardTemplate.html",
             controller : "dashboardController",
             requiresLogin: true
         })
@@ -43,8 +43,12 @@ myModule.factory('loadingInterceptor', function (LoadingService) {
         response: function (response) {
             LoadingService.setLoading(false);
             return response;
-        }
+        },
+        responseError: function (response) {
+            console.error(response);
+            LoadingService.setLoading(false);
+            return response;
+        },
     };
     return loadingInterceptor;
 });
-

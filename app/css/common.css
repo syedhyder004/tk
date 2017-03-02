@@ -11,9 +11,9 @@
 .width-100 {
 	width:100px;
 }
-
-
-
+.pointer {
+	cursor:pointer;
+}
 .load-bar {
 	position: fixed;
 	margin-top: -21px;

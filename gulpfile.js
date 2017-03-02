@@ -58,3 +58,10 @@ var gulps = require("gulp-series");
 
 gulps.registerSeries("default", ["watcher","del", "jsMin","cssMin","fonts","copyTemplates","initBrowserSync"]);
 
+var mockServer = require('gulp-mock-server');
+ 
+gulp.src('.')
+  .pipe(mockServer({
+    port: 8090,
+    mockDir:"./app/js/mockData"
+  }));

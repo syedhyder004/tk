@@ -25,6 +25,6 @@ angular.module('tp.Login')
 	          username : $scope.user.name,
 	          password : $scope.user.password
         };
-		LoginService.login(loginData, loginCallback);
+		LoginService.login(loginData, loginCallback);	
 	};
 }); 
