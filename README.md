@@ -1,10 +1,10 @@
-# TP
+# TK
 
-TP stands for Tax Partner is a web and mobile application for the auditors, ca, financial instituions to manage their taxes easily.
+TK stands for Tax King is a web and mobile application for the auditors, ca, financial instituions to manage their taxes easily.
 
 ### Tech
 
-TP uses a number of open source projects to work properly:
+TK uses a number of open source projects to work properly:
 
 * [Angular.js] - HTML enhanced for web apps!
 * [Sublime Editor] - awesome web-based text editor
@@ -16,19 +16,19 @@ TP uses a number of open source projects to work properly:
 * [font awesome] - awesome fonts
 * [jQuery] - duh
 
-And of course TP itself is open source with a [public repository][tp]
+And of course TK itself is open source with a [public repository][tk]
  on GitHub.
 
 ### Installation
 
-TP requires [Node.js](https://nodejs.org/) v4+ to run.
+TK requires [Node.js](https://nodejs.org/) v4+ to run.
 
 Download and extract the [latest pre-built release](https://github.com/joemccann/dillinger/releases).
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd tp
+$ cd tk
 $ npm install 
 $ gulp --silent --dev
 ```
@@ -43,7 +43,7 @@ $ gulp --silent --prod
 ### Development
 
 Want to contribute? Great!
-TP uses Gulp for fast developing. Make a change in your file and instantanously see your updates! Open your favorite Terminal and run these commands.
+TK uses Gulp for fast developing. Make a change in your file and instantanously see your updates! Open your favorite Terminal and run these commands.
 
 First Tab:
 ```sh
