@@ -3,13 +3,13 @@
 </div>
 <form name="userForm" ng-submit="submitForm()" novalidate autocomplete="off">
 	<div class="hidden-xs login-margin"></div>
-	<div class="col-xs-12 col-sm-4 col-sm-offset-1">
+	<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 		<div class="">
 			<h4>{{appStrings.login.loginHeader}}</h4>
 		</div>
 		<!-- USERNAME -->
 		<div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-			<input type="text" name="username" class="form-control" ng-model="user.name" required placeholder="{{appStrings.login.userIdDisplay}}"  ng-minlength="4">
+			<input type="text" name="username" class="form-control" ng-model="user.name" required placeholder="{{appStrings.login.userIdDisplay}}" ng-minlength="4">
 			<p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">{{appStrings.login.userNameRequired}}</p>
 			<p ng-show="userForm.username.$error.minlength" class="help-block">{{appStrings.login.userNameLengthError}}</p>
 		</div>
@@ -34,33 +34,22 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-12 visible-xs login-margin"></div>
-	<div class="col-xs-12 col-sm-4 col-sm-offset-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<i class="fa fa-help"></i>{{appStrings.help.support247}}
-			</div>
-			<div class="panel-body">
-				<help></help>
-			</div>
-		</div>
-	</div>
 </form>
 <!-- enroll in tp -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Want to enroll in <a>Tax Partner</a> application</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary text-captalize">Enroll</button>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Want to enroll in <a>Tax Partner</a> application</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary text-captalize">Enroll</button>
+			</div>
+		</div>
+	</div>
 </div>

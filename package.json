@@ -1,6 +1,6 @@
 {
-  "name": "bedigital",
-  "version": "0.0.1",
+  "name": "taxking",
+  "version": "0.1.0",
   "description": "be digital solutions ",
   "main": "index.js",
   "scripts": {
@@ -42,10 +42,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krish0652/tp.git"
+    "url": "git+https://github.com/krish0652/tk.git"
   },
   "bugs": {
-    "url": "https://github.com/krish0652/tp/issues"
+    "url": "https://github.com/krish0652/tk/issues"
   },
-  "homepage": "https://github.com/krish0652/tp#readme"
+  "homepage": "https://github.com/krish0652/tk#readme"
 }

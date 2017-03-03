@@ -1,11 +1,11 @@
 .login-margin {
-	margin-top:100px;
+   margin-top: 150px;
 }
+
 .login-help {
-	margin-top:20px;
+   margin-top: 20px;
 }
 
-.login-help	> div {
-	margin-bottom:10px;
+.login-help>div {
+   margin-bottom: 10px;
 }
-

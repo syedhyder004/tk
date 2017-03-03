@@ -1,8 +1,8 @@
 <div class="header">
 	<div class="container">
-		<div class="navbar-brand" >Tax King</div>
+		<div class="navbar-brand">Tax King</div>
 		<div ng-repeat="menu in navigation.left" class="pull-left">
-			<div class="menu-dropdown">
+			<div class="menu-dropdown" ng-if="menu.loginRequired == false">
 				<span>
 					{{menu.title}}
 					<span ng-if="menu.dropdown">
@@ -15,35 +15,35 @@
 							<span ng-bind-html="submenu.title | ashtml"></span>
 						</div>
 						<hr/>
-					</div>
-					</div>
-				</div>
-		</div>
-
-		<div ng-repeat="menu in navigation.right" class="pull-right">
-			<div class="menu-dropdown menu-dropdown-right">
-				<span>
-					{{menu.title}}
-					<span ng-if="menu.dropdown">
-						<i class="caret"></i>
-					</span>
-				</span>
-				<div class="submenu-dropdown" ng-if="menu.dropdown">
-					<div ng-repeat="submenu in menu.dropdown">
-						<div class="submenu-dropdown-item pointer">
-							<span ng-bind-html="submenu.title | ashtml"></span>
-						</div>
-						<hr/>
-					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<div ng-repeat="menu in navigation.right" class="pull-right">
+			<div class="menu-dropdown menu-dropdown-right" ng-if="menu.loginRequired == false">
+				<span>
+					{{menu.title}}
+					<span ng-if="menu.dropdown">
+						<i class="caret"></i>
+					</span>
+				</span>
+				<div class="submenu-dropdown" ng-if="menu.dropdown">
+					<div ng-repeat="submenu in menu.dropdown">
+						<div class="submenu-dropdown-item pointer">
+							<span ng-bind-html="submenu.title | ashtml"></span>
+						</div>
+						<hr/>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+</div>
 </div>
 <div class="{{loadingView ? 'load-bar': 'load-bar hidden'}}">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
 </div>

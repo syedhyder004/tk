@@ -1,49 +1,51 @@
+angular.module('tp.Header', ['tp.Common']).controller('HeaderBLCtrl', function ($scope, NavigationService, LoginService) {
 
-angular.module('tp.Header',['tp.Common']).controller('HeaderBLCtrl', function($scope,NavigationService){
-
-	$scope.template = { url: '/dist/views/header.html' };
+	$scope.template = {
+		url: '/dist/views/header.html'
+	};
 	$scope.navigation = NavigationService.calculate();
+	$scope.isUserLoggedIn = LoginService.isAuthenticated();
 	console.log($scope.navigation);
-	$scope.go = function ( path ) {
-		$location.path( path );
+	$scope.go = function (path) {
+		$location.path(path);
 	};
 
-	 // Enter your ids or classes
-    var toggler = '.navbar-toggle';
-    var pagewrapper = '#page-content';
-    var navigationwrapper = '.navbar-header';
-    var menuwidth = '100%'; // the menu inside the slide menu itself
-    var slidewidth = '80%';
-    var menuneg = '-100%';
-    var slideneg = '-80%';
+	// Enter your ids or classes
+	var toggler = '.navbar-toggle';
+	var pagewrapper = '#page-content';
+	var navigationwrapper = '.navbar-header';
+	var menuwidth = '100%'; // the menu inside the slide menu itself
+	var slidewidth = '80%';
+	var menuneg = '-100%';
+	var slideneg = '-80%';
 
 
-    $scope.slideClick =  function (e) {
+	$scope.slideClick = function (e) {
 
-        var selected = $("#slide-nav").hasClass('slide-active');
-        $('#slidemenu').stop().animate({
-            left: selected ? menuneg : '0px'
-        });
+		var selected = $("#slide-nav").hasClass('slide-active');
+		$('#slidemenu').stop().animate({
+			left: selected ? menuneg : '0px'
+		});
 
-        $('#navbar-height-col').stop().animate({
-            left: selected ? slideneg : '0px'
-        });
+		$('#navbar-height-col').stop().animate({
+			left: selected ? slideneg : '0px'
+		});
 
-        $(pagewrapper).stop().animate({
-            left: selected ? '0px' : slidewidth
-        });
+		$(pagewrapper).stop().animate({
+			left: selected ? '0px' : slidewidth
+		});
 
-        $(navigationwrapper).stop().animate({
-            left: selected ? '0px' : slidewidth
-        });
-
-
-        $("#slide-nav").toggleClass('slide-active');
-        $('#slidemenu').toggleClass('slide-active');
+		$(navigationwrapper).stop().animate({
+			left: selected ? '0px' : slidewidth
+		});
 
 
-        //$('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+		$("#slide-nav").toggleClass('slide-active');
+		$('#slidemenu').toggleClass('slide-active');
 
-    }
+
+		//$('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+
+	}
 
 });
