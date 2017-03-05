@@ -1,12 +1,12 @@
-angular.module('tp.Header', ['tp.Common']).controller('HeaderBLCtrl', function ($scope, NavigationService, LoginService) {
+angular.module('tp.Header', ['tp.Common']).controller('HeaderCtrl', function ($scope, $cookieStore, $location, NavigationService, LoginService) {
 
 	$scope.template = {
 		url: '/dist/views/header.html'
 	};
 	$scope.navigation = NavigationService.calculate();
-	$scope.isUserLoggedIn = LoginService.isAuthenticated();
+	$scope.isUserLoggedIn = LoginService.isAuthenticated() || $cookieStore.get('token');
 	console.log($scope.navigation);
-	$scope.go = function (path) {
+	$scope.goToRoute = function (path) {
 		$location.path(path);
 	};
 

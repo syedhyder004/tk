@@ -38,8 +38,17 @@ angular.module('tp.Common').service('NavigationService', function () {
 			"right": [{
 				"id": "profile",
 				"title": "My Profile",
-				"loginRequired": true
-             }, {
+				"loginRequired": true,
+				"dropdown": [
+					{
+						"id": "settings",
+						"title": "<i class='fa fa-wrench'></i>&nbsp;&nbsp;Settings"
+                    }, {
+						"id": "logout",
+						"title": "<i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout",
+						"route": "logout"
+                    }]
+		}, {
 				"id": "help",
 				"title": "Help",
 				"loginRequired": false,
@@ -51,7 +60,7 @@ angular.module('tp.Common').service('NavigationService', function () {
 						"id": "number",
 						"title": "Phone <br>123466789"
                     }]
-             }]
+		}]
 		}
 	}
 });

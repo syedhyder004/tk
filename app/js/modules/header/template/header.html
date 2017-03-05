@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="navbar-brand">Tax King</div>
 		<div ng-repeat="menu in navigation.left" class="pull-left">
-			<div class="menu-dropdown" ng-if="menu.loginRequired == false">
+			<div class="menu-dropdown" ng-if="isUserLoggedIn || !menu.loginRequired">
 				<span>
 					{{menu.title}}
 					<span ng-if="menu.dropdown">
@@ -21,7 +21,7 @@
 		</div>
 
 		<div ng-repeat="menu in navigation.right" class="pull-right">
-			<div class="menu-dropdown menu-dropdown-right" ng-if="menu.loginRequired == false">
+			<div class="menu-dropdown menu-dropdown-right" ng-if="isUserLoggedIn || !menu.loginRequired">
 				<span>
 					{{menu.title}}
 					<span ng-if="menu.dropdown">
@@ -30,7 +30,7 @@
 				</span>
 				<div class="submenu-dropdown" ng-if="menu.dropdown">
 					<div ng-repeat="submenu in menu.dropdown">
-						<div class="submenu-dropdown-item pointer">
+						<div class="submenu-dropdown-item pointer" ng-click="goToRoute(submenu.route)">
 							<span ng-bind-html="submenu.title | ashtml"></span>
 						</div>
 						<hr/>
@@ -39,9 +39,8 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-</div>
-</div>
 <div class="{{loadingView ? 'load-bar': 'load-bar hidden'}}">
 	<div class="bar"></div>
 	<div class="bar"></div>

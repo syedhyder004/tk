@@ -1,4 +1,4 @@
-<div ng-controller="HeaderBLCtrl">
+<div ng-controller="HeaderCtrl">
 	<div ng-include src="template.url" showSpinner=showSpinner></div>
 </div>
 <form name="userForm" ng-submit="submitForm()" novalidate autocomplete="off">
@@ -7,6 +7,7 @@
 		<div class="">
 			<h4>{{appStrings.login.loginHeader}}</h4>
 		</div>
+		<error ng-if="hasErrors"></error>
 		<!-- USERNAME -->
 		<div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
 			<input type="text" name="username" class="form-control" ng-model="user.name" required placeholder="{{appStrings.login.userIdDisplay}}" ng-minlength="4">

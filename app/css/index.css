@@ -9,3 +9,14 @@
 .login-help>div {
    margin-bottom: 10px;
 }
+
+.error {
+   background-color: #F3CDCD;
+   padding: 5px 5px 5px 5px;
+   border-radius: 5px;
+   margin-bottom: 20px;
+}
+
+.error-close {
+   margin-top: 3px;
+}
