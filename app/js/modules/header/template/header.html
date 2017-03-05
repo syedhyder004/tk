@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="navbar-brand">Tax King</div>
 		<div ng-repeat="menu in navigation.left" class="pull-left">
-			<div class="menu-dropdown" ng-if="isUserLoggedIn || !menu.loginRequired">
+			<div class="menu-dropdown pointer" ng-if="isUserLoggedIn || !menu.loginRequired" ng-click="goToRoute(menu.route)">
 				<span>
 					{{menu.title}}
 					<span ng-if="menu.dropdown">
@@ -21,7 +21,7 @@
 		</div>
 
 		<div ng-repeat="menu in navigation.right" class="pull-right">
-			<div class="menu-dropdown menu-dropdown-right" ng-if="isUserLoggedIn || !menu.loginRequired">
+			<div class="menu-dropdown menu-dropdown-right pointer" ng-if="isUserLoggedIn || !menu.loginRequired">
 				<span>
 					{{menu.title}}
 					<span ng-if="menu.dropdown">

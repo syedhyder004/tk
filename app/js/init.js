@@ -40,3 +40,7 @@ require('./modules/dashboard/controller/dashboardController');
 // logout related files
 require('./modules/logout/logout');
 require('./modules/logout/controller/signoutController');
+
+//taxInfo related files
+require('./modules/taxInfo/taxInfo');
+require('./modules/taxInfo/controller/taxInfoController');

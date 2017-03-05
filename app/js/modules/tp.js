@@ -8,7 +8,8 @@ var myModule = angular.module('tp', [
         'tp.Login',
         'tp.Header',
         'ngCookies',
-        'tp.SignOut'
+        'tp.SignOut',
+        'tp.TaxInfo'
 	/*
 	        'tp.User',
 	        'auth0',
@@ -38,6 +39,11 @@ myModule.config(function ($routeProvider, $httpProvider, $provide
 			controller: "SignoutCtrl",
 			requiresLogin: true,
 			templateUrl: "dist/views/dashboardTemplate.html"
+		})
+		.when('/taxinfo/compliance', {
+			controller: "taxInfoController",
+			requiresLogin: true,
+			templateUrl: "dist/views/taxInfoTemplate.html"
 		})
 		.otherwise({
 			redirectTo: '/'
